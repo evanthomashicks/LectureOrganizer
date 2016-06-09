@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{^user}}
+<form action="/login" method="post">
+<input type="text" placeholder="Username" name="userEmail" required/>
+<input type="password" placeholder="Password" name="userPassword" required/>
+<button type="submit">Login</button>
+</form>
+{{/user}}
+
+
+</body>
+</html>

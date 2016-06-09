@@ -1,0 +1,46 @@
+<html>
+<h1>Welcome</h1>
+<html>
+<body>
+{{^user}}
+<form action="/login" method="post">
+    <input type="text" placeholder="Username" name="userEmail" required/>
+    <input type="password" placeholder="Password" name="userPassword" required/>
+    <button type="submit">Login</button>
+</form>
+{{/user}}
+
+<!--{{#user}}-->
+<!--Welcome, {{email}}!-->
+<!--<form action="/logout" method="post">-->
+    <!--<button type="submit">Logout</button>-->
+<!--</form>-->
+<!--<br><br>-->
+
+<!--...-->
+
+<!--{{/user}}-->
+
+
+
+<!--<form action="/searchBySubject" method="get">-->
+    <!--<input type="text" placeholder="Enter the subject you would like to search by" name="search"/>-->
+    <!--<button type="submit">Search</button>-->
+<!--</form>-->
+<!--<br><br>-->
+<!--<form action="/add-note" method="post">-->
+    <!--<input type="text" placeholder="Enter your Notes name" name="noteName"/>-->
+    <!--<input type="text" placeholder="Enter your Notes Subject" name="noteSubject"/>-->
+    <!--<input type="text" placeholder="Enter you notes code" name="noteCode"/>-->
+    <!--<input type="text" placeholder="Enter a tag to associate with your Note" name="noteTag"/>-->
+    <!--<button type="submit" >Add Note</button>-->
+<!--</form>-->
+
+<!--<-->
+<!--<ol>-->
+    <!--{{#notes}}-->
+    <!--<li>{{noteName}} {{noteSubject}} {{noteCode}} {{noteTag}}</li>-->
+<!--</ol>-->
+<!--{{/notes}}-->
+</body>
+</html>

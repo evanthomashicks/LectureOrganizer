@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+<html lang="en-US" ng-app="TIYAngularApp">
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="/js/tiy-ng-controller.js"></script>
+<body ng-controller="SampleController">
+{{! changing the mustache delimiter so it doesn't conflict with  }}
+{{! the default angularjs delimeters - https://mustache.github.io/mustache.5.html for more info  }}
+{{=<% %>=}}
+<div style="position: relative; float: left; width: 100%; padding: 20px;">
+    <div ng-if="newUser">
+
+    Welcome, {{newUser.email}}!
+    <form action="/logout" method="post">
+        <button type="submit">Logout</button>
+    </form>
+    <br><br>
+
+    </div>
+
+    <!--<h1>Hello <span ng-bind="name"></span></h1>-->
+
+    <!--<p>Name : <input type="text" ng-model="name"></p>-->
+
+    <!--{{name}} is trying to figure things out ... <br/><br/>-->
+
+    <!--<span><button type="submit" ng-click="testNotes()">Test Notes</button></span>-->
+
+        <span>
+        <input type="text" placeholder="Enter your Notes name" ng-model="newNote.noteName"/></span>
+        <span>
+        <input type="text" placeholder="Enter your Notes Subject" ng-model="newNote.noteSubject"></span>
+        <span>
+        <input type="text" placeholder="Enter you notes code" ng-model="newNote.noteCode"/></span>
+        <span>
+        <input type="text" placeholder="Enter a tag to associate with your Note" ng-model="newNote.noteTag"/></span>
+     <span><button type="submit" ng-click="addNote()" value="Create new note" >Add Note</button></span>
+
+
+    <input type="button" ng-click="getNotes()" value="Refresh Note Data"/>
+    <div style="position: relative; float: left; width: 40%; padding: 20px;">
+        <h2>Note List</h2>
+        <ul>
+            <li ng-repeat="note in notes">
+                {{note.noteName}} {{note.noteSubject}} {{note.noteCode}} {{note.noteTag}}
+                <button ng-click="deleteNote(note.id)">delete</button>
+                <button ng-click="toggleNote(note.id)">toggle</button>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
